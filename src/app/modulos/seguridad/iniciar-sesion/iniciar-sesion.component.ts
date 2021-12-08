@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-iniciar-sesion',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IniciarSesionComponent implements OnInit {
 
-  constructor() { }
+  fgValidacion: FormGroup = this.fb.group({});
+  //en el constructor podemos inyectar todo lo que queramos
+  constructor(private fb: FormBuilder) { }
 
-  ngOnInit(): void {
+ConstruirFormulario() {
+  this.fgValidacion = this.fb.group({
+  correo: ['', Validators.required],
+  clave: ['', Validators.required]
+});
+}
+//ngOnInit se ejecutan con las acciones de un componente
+ngOnInit(): void {
+  this.ConstruirFormulario();
   }
-
+  get ObtenerFGV(){
+    return this.fgValidacion.controls;
+  }
 }
