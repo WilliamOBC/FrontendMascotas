@@ -18,6 +18,30 @@ const routes: Routes = [
     loadChildren: () => import('./modulos/parametrizacion/parametrizacion.module').then(m => m.ParametrizacionModule)
   },
   {
+    path: 'administrador',
+    loadChildren: () => import('./modulos/administrador/administrador.module').then(m => m.AdministradorModule)
+  },
+  {
+    path: 'asesor',
+    loadChildren: () => import('./modulos/asesor/asesor.module').then(m => m.AsesorModule)
+  },
+  {
+    path: 'cliente',
+    loadChildren: () => import('./modulos/cliente/cliente.module').then(m => m.ClienteModule)
+  },
+  {
+    path: 'mascota',
+    loadChildren: () => import('./modulos/mascota/mascota.module').then(m => m.MascotaModule)
+  },
+  {
+    path: 'solicitudes',
+    loadChildren: () => import('./modulos/solicitudes/solicitudes.module').then(m => m.SolicitudesModule)
+  },
+  {
+    path: 'usuario',
+    loadChildren: () => import('./modulos/usuario/usuario.module').then(m => m.UsuarioModule)
+  },
+  {
     path: 'seguridad',
     loadChildren: () => import('./modulos/seguridad/seguridad.module').then(m => m.SeguridadModule)
   },
